@@ -1,0 +1,98 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    overflow: hidden;
+    height: 100vh;
+}
+
+#vid {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    object-fit: cover;
+    z-index: 0;
+}
+
+/* ── Taskbar ── */
+.taskbar {
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    z-index: 110;
+    line-height: 0;
+}
+
+.taskbar img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* ── Invisible Windows icon hit zone ── */
+.win-hit-zone {
+    position: absolute;
+    top: 0;
+    left: 36.5%;
+    width: 2%;
+    height: 100%;
+    cursor: pointer;
+    /* background: rgba(255,0,0,0.3); */
+}
+
+/* ── Start Menu ── */
+.startmenu {
+    position: fixed;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -100vh;
+    width: 720px;
+    max-width: 90%;
+    transition: bottom 0.3s cubic-bezier(.4,0,.2,1), opacity 0.25s ease;
+    z-index: 120;
+    background: rgba(24,24,24,0.92);
+    color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+    max-height: calc(100vh - 60px);
+    opacity: 0;
+    pointer-events: none;
+    display: flex;               /* NEW */
+    flex-direction: column;      /* NEW */
+    overflow: hidden;            /* NEW - removed from here, handled per section */
+}
+
+.startmenu.open {
+    bottom: 52px;
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* ── Scrollable top section ── */
+.startmenu-top {
+    overflow-y: auto;
+    flex: 1;
+    padding: 12px;
+}
+
+.startmenu-top img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px;
+}
+
+/* ── Fixed bottom bar (username / settings / power) ── */
+.startmenu-bottom {
+    flex-shrink: 0;
+    border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+.startmenu-bottom img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
