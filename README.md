@@ -66,11 +66,5 @@ win11-web/
 
 ---
 
-## 👤 Author
-
-**Adarsh Rathore**  
-GitHub: [@yourusername](https://github.com/yourusername)
-
----
 
 > ⚠️ This project is made for learning purposes only. All Windows 11 UI elements belong to Microsoft.
